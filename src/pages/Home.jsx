@@ -29,7 +29,12 @@ function Home() {
             <button type="submit" className="search-button">Search</button>
         </form>
         <div className="movies-grid">
-            {movies.map(movie => <MovieCard movie={movie} key={movie.id}/>)}
+            {movies.map(
+                (movie) => (
+                    movie.title.toLocaleLowerCase().startsWith(searchQuery) &&
+                    <MovieCard movie={movie} key={movie.id}/>
+                )
+            )}
         </div>
     </div>;
 }
