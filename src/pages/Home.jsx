@@ -2,7 +2,7 @@ import MovieCard from "../components/MovieCard.jsx";
 import {useEffect, useState} from "react";
 
 import "../css/Home.css";
-import {getPopularMovies} from "../services/api.js";
+import {getPopularMovies, searchMovies} from "../services/api.js";
 
 function Home() {
     const [searchQuery, setSearchQuery] = useState("");
@@ -26,10 +26,22 @@ function Home() {
         loadPopularMovies();
     }, []);
 
-    const handleSearch = (e) => {
+    const handleSearch = async (e) => {
         e.preventDefault();
-        alert(searchQuery);
-        setSearchQuery("");
+        if (!searchQuery.trim()) return;
+        if (loading) return;
+
+        setLoading(true);
+        try {
+            const searchResults = await searchMovies(searchQuery);
+            setMovies(searchResults);
+            setError(null);
+        } catch (err) {
+            console.log(err);
+            setError("Failed to search movies...");
+        } finally {
+            setLoading(false);
+        }
     };
 
     return <div className="home">
@@ -52,7 +64,6 @@ function Home() {
             <div className="movies-grid">
                 {movies.map(
                     (movie) => (
-                        movie.title.toLocaleLowerCase().startsWith(searchQuery.toLowerCase()) &&
                         <MovieCard movie={movie} key={movie.id}/>
                     ))}
             </div>
