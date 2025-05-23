@@ -1,12 +1,53 @@
-# React + Vite
+# 🎬 Movie Database with Favorites App – React, LocalStorage, TMDB API
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple movie browser and favorites app built with **React**. Search for movies, view popular titles via [TMDB API](https://www.themoviedb.org/), and save your favorites using **LocalStorage**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **🔍 Movie Search**: Search movies by title using the TMDB API.
+- **🔥 Popular Movies**: Browse trending and popular movies.
+- **⭐ Favorites**: Add or remove movies from your favorites list (stored in LocalStorage).
+- **🖼️ Movie Cards**: Clean, card-based movie presentation.
+- **⚡ Fast & Responsive**: Lightweight, responsive SPA.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+Live demo:
+[https://b4-react-movie-database.netlify.app/](https://b4-react-movie-database.netlify.app/)
+
+---
+
+## ⚙️ Prerequisites
+
+- [Node.js v20+](https://nodejs.org/en/)
+
+---
+
+## 🛠️ Technologies Used
+
+- **Frontend**:
+  - React 18+
+  - JavaScript (ES6+)
+  - CSS Modules
+
+- **Other**:
+  - LocalStorage (for favorites)
+  - TMDB API (or another public movie API)
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**. See the [LICENSE](https://opensource.org/license/mit) for details.
+
+---
+
+## 🙌 Acknowledgements
+
+- Special thanks to the [@techwithtim](https://github.com/@techwithtim) - creator of [the tutorial](https://youtu.be/G6D9cBaLViA).
+
+---
+
+Feel free to fork, open issues, and contribute!
